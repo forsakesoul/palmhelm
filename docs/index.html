@@ -90,6 +90,7 @@ h1{text-wrap:balance}
 .card.why{padding-top:34px}
 .note{color:var(--sub);font-size:14px;margin:10px 0 0}
 .card h3{margin:0 0 8px}
+.sub{font-family:var(--display);font-weight:400;font-size:24px;margin:36px 0 10px}
 </style>
 </head>
 <body>
@@ -106,8 +107,8 @@ h1{text-wrap:balance}
     <h1>在 iPhone 和 Mac 上，<span class="hi">指挥终端里的编码 agent</span>。</h1>
     <p class="lead">Claude Code、Codex 等 agent 跑在 Herdr 窗格里。Palmhelm 把它们的会话同步到手机与 Mac，让你阅读对话、排队发消息、处理审批与提问。</p>
     <p class="note"><strong>需要先安装 <a href="https://herdr.dev">Herdr</a>。</strong>Herdr 是终端里的 agent 多路复用器，agent 要在 Herdr 窗格中运行。</p>
-    <div class="ctas"><span class="btn primary dis" aria-disabled="true">下载 Mac 版 · 即将推出</span><a class="btn" href="#features-zh">了解功能</a></div>
-    <p class="note">Mac 版等待 Apple 公证后发布，届时在 Releases 提供安装包。</p>
+    <div class="ctas"><a class="btn primary" href="https://github.com/forsakesoul/palmhelm/releases/latest/download/Palmhelm.dmg">下载 Mac 版（macOS 15+）</a><a class="btn" href="#features-zh">了解功能</a></div>
+    <p class="note">已通过 Apple 公证 · <a href="https://github.com/forsakesoul/palmhelm/releases">查看全部版本与校验值 ↗</a></p>
   </div>
   <section id="features-zh">
     <h2>能做什么</h2>
@@ -125,10 +126,12 @@ h1{text-wrap:balance}
     <ol class="steps">
       <li><span class="num">1</span><div><p>系统要求 macOS 15 或更高版本。</p></div></li>
        <li><span class="num">2</span><div><p>安装 <a href="https://herdr.dev">Herdr</a>，并在 Herdr 窗格中运行 Claude Code、Codex 等 agent。</p></div></li>
-      <li><span class="num">3</span><div><p>在 Releases 下载安装包，把 Palmhelm 拖到“应用程序”。</p></div></li>
+      <li><span class="num">3</span><div><p>下载 Palmhelm.dmg，打开后把 Palmhelm 拖入“应用程序”。</p></div></li>
       <li><span class="num">4</span><div><p>首次打开 Palmhelm，然后在 iPhone 上与这台 Mac 配对。</p></div></li>
       <li><span class="num">5</span><div><p>离开局域网时，用 Tailscale 连接同一台 Mac。iPhone 版即将上架 App Store。</p></div></li>
     </ol>
+    <h3 class="sub">更新</h3>
+    <p>已安装的用户下载新的 Palmhelm.dmg，拖入“应用程序”覆盖即可。数据保存在 Mac 的数据目录里，位于 App 之外，替换 App 不影响这些数据。</p>
   </section>
   <section>
     <div class="card why"><h2>隐私</h2><p>数据留在你的 Mac。会话记录、消息与审批都保存在本机数据目录。</p><p>对话与数据在你的设备之间直接传输，没有 Palmhelm 自己的服务器。可选的飞书通道经飞书传输，iPhone 推送经 Apple 送达；Tailscale 无法直连时，会经其加密中继。</p><p>Bridge 只在局域网或 Tailscale 地址上提供接口：TLS 加密，并需要设备令牌。</p></div>
@@ -141,8 +144,8 @@ h1{text-wrap:balance}
     <h1>Run the coding agents in your terminal, <br><span class="hi">from iPhone and Mac</span>.</h1>
     <p class="lead">Claude Code, Codex and other agents run in Herdr panes. Palmhelm syncs their sessions to your phone and Mac, so you can read the conversation, queue messages, and handle approvals and questions.</p>
     <p class="note"><strong>Requires <a href="https://herdr.dev">Herdr</a> first.</strong> Herdr is a terminal multiplexer for coding agents; the agents must run in Herdr panes.</p>
-    <div class="ctas"><span class="btn primary dis" aria-disabled="true">Download for Mac · coming soon</span><a class="btn" href="#features-en">What it does</a></div>
-    <p class="note">The Mac app will be published after Apple notarization, with the installer on Releases.</p>
+    <div class="ctas"><a class="btn primary" href="https://github.com/forsakesoul/palmhelm/releases/latest/download/Palmhelm.dmg">Download for Mac (macOS 15+)</a><a class="btn" href="#features-en">What it does</a></div>
+    <p class="note">Notarized by Apple · <a href="https://github.com/forsakesoul/palmhelm/releases">All releases and checksums ↗</a></p>
   </div>
   <section id="features-en">
     <h2>What it does</h2>
@@ -160,10 +163,12 @@ h1{text-wrap:balance}
     <ol class="steps">
       <li><span class="num">1</span><div><p>Requires macOS 15 or later.</p></div></li>
        <li><span class="num">2</span><div><p>Install <a href="https://herdr.dev">Herdr</a> and run Claude Code, Codex and other agents in Herdr panes.</p></div></li>
-      <li><span class="num">3</span><div><p>Download the installer from Releases and drag Palmhelm into Applications.</p></div></li>
+      <li><span class="num">3</span><div><p>Download Palmhelm.dmg, open it, and drag Palmhelm into Applications.</p></div></li>
       <li><span class="num">4</span><div><p>Open Palmhelm for the first time, then pair your iPhone with this Mac.</p></div></li>
       <li><span class="num">5</span><div><p>Away from your network, connect to the same Mac over Tailscale. The iPhone app is coming to the App Store.</p></div></li>
     </ol>
+    <h3 class="sub">Updates</h3>
+    <p>To update, download the new Palmhelm.dmg and drag it into Applications to replace the app. Your data is stored in the Mac's data directory, outside the app, and replacing the app does not affect it.</p>
   </section>
   <section>
     <div class="card why"><h2>Privacy</h2><p>Your data stays on your Mac. Session records, messages and approvals are stored in the local data directory.</p><p>Conversations and data travel directly between your devices, with no Palmhelm server in between. The optional Feishu channel goes through Feishu, iPhone push notifications go through Apple, and when Tailscale cannot connect directly it uses its encrypted relay.</p><p>The Bridge serves only on LAN or Tailscale addresses: TLS encrypted, and every request needs a device token.</p></div>

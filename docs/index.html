@@ -85,6 +85,9 @@ h2::before{content:"";display:inline-block;width:20px;height:20px;margin-right:1
 @media (max-width:820px){.cards{grid-template-columns:1fr}}
 
 .btn.dis{opacity:.55;cursor:not-allowed;box-shadow:none}
+h1{text-wrap:balance}
+.hi{-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.card.why{padding-top:34px}
 .note{color:var(--sub);font-size:14px;margin:10px 0 0}
 .card h3{margin:0 0 8px}
 </style>
@@ -100,7 +103,7 @@ h2::before{content:"";display:inline-block;width:20px;height:20px;margin-right:1
 <div data-l="zh">
   <div class="hero">
     <p class="crumb">macOS · iPhone · 数据留在本机</p>
-    <h1>在 iPhone 和 Mac 上，<br><span class="hi">指挥终端里的编码 agent</span>。</h1>
+    <h1>在 iPhone 和 Mac 上，<span class="hi">指挥终端里的编码 agent</span>。</h1>
     <p class="lead">Claude Code、Codex 等 agent 跑在 Herdr 窗格里。Palmhelm 把它们的会话同步到手机与 Mac，让你阅读对话、排队发消息、处理审批与提问。</p>
     <div class="ctas"><span class="btn primary dis" aria-disabled="true">下载 Mac 版 · 即将推出</span><a class="btn" href="#features-zh">了解功能</a></div>
     <p class="note">Mac 版等待 Apple 公证后发布，届时在 Releases 提供安装包。</p>
@@ -112,7 +115,7 @@ h2::before{content:"";display:inline-block;width:20px;height:20px;margin-right:1
       <div class="card"><h3>消息排队与原因说明</h3><p>草稿、等待空闲、排位各有说明，知道消息为什么还没发出。</p></div>
       <div class="card"><h3>立即插入</h3><p>agent 正在工作时，也能把一句话插进当前回合。</p></div>
       <div class="card"><h3>审批与提问提醒</h3><p>审批和提问到达时提醒你，在手机上直接处理。</p></div>
-      <div class="card"><h3>局域网与 Tailscale 直连</h3><p>同一局域网或经 Tailscale 直连 Mac，不经第三方服务器。</p></div>
+      <div class="card"><h3>局域网与 Tailscale 直连</h3><p>同一局域网或经 Tailscale 直连 Mac。对话与数据在设备之间直接传输，没有 Palmhelm 自己的服务器。</p></div>
       <div class="card"><h3>Mac 内置 Bridge</h3><p>菜单栏与刘海常驻，Bridge 由 App 启动与停止，不需要另外安装服务。</p></div>
     </div>
   </section>
@@ -122,12 +125,11 @@ h2::before{content:"";display:inline-block;width:20px;height:20px;margin-right:1
       <li><span class="num">1</span><div><p>系统要求 macOS 15 或更高版本。</p></div></li>
       <li><span class="num">2</span><div><p>在 Releases 下载安装包，把 Palmhelm 拖到“应用程序”。</p></div></li>
       <li><span class="num">3</span><div><p>首次打开 Palmhelm，然后在 iPhone 上与这台 Mac 配对。</p></div></li>
-      <li><span class="num">4</span><div><p>离开局域网时，用 Tailscale 连接同一台 Mac。iPhone 版即将通过 TestFlight 提供。</p></div></li>
+      <li><span class="num">4</span><div><p>离开局域网时，用 Tailscale 连接同一台 Mac。iPhone 版即将上架 App Store。</p></div></li>
     </ol>
   </section>
-  <section class="two">
-    <div class="card why"><h2>隐私</h2><p>数据留在你的 Mac。会话记录、消息与审批都保存在本机数据目录。</p><p>Bridge 只在局域网或 Tailscale 地址上提供接口，读写都需要设备令牌，可选 TLS。</p><p>Palmhelm 不经过任何第三方服务器。</p></div>
-    <div><h2>下载</h2><p>安装包在 GitHub Releases 发布。Mac 版公证完成前，这里的下载按钮暂不可用。</p></div>
+  <section>
+    <div class="card why"><h2>隐私</h2><p>数据留在你的 Mac。会话记录、消息与审批都保存在本机数据目录。</p><p>对话与数据在你的设备之间直接传输，没有 Palmhelm 自己的服务器。可选的飞书通道经飞书传输，iPhone 推送经 Apple 送达；Tailscale 无法直连时，会经其加密中继。</p><p>Bridge 只在局域网或 Tailscale 地址上提供接口：TLS 加密，并需要设备令牌。</p></div>
   </section>
   <footer>版权所有 © forsakesoul · 安装包与更新记录见 <a href="https://github.com/forsakesoul/palmhelm/releases">GitHub Releases ↗</a></footer>
 </div>
@@ -146,7 +148,7 @@ h2::before{content:"";display:inline-block;width:20px;height:20px;margin-right:1
       <div class="card"><h3>Queued messages with reasons</h3><p>Drafts, waiting for idle, and queue position each explain why a message has not gone out yet.</p></div>
       <div class="card"><h3>Immediate insert</h3><p>Slip a line into the current turn even while the agent is working.</p></div>
       <div class="card"><h3>Approval and question alerts</h3><p>Get alerted when an approval or question arrives, and answer it on your phone.</p></div>
-      <div class="card"><h3>LAN and Tailscale direct</h3><p>Connect straight to your Mac on the same network or over Tailscale. No third-party server in between.</p></div>
+      <div class="card"><h3>LAN and Tailscale direct</h3><p>Connect straight to your Mac on the same network or over Tailscale. Conversations and data travel directly between devices, with no Palmhelm server in between.</p></div>
       <div class="card"><h3>Built-in Bridge on Mac</h3><p>Lives in the menu bar and the notch. The app starts and stops the Bridge; no separate service to install.</p></div>
     </div>
   </section>
@@ -156,12 +158,11 @@ h2::before{content:"";display:inline-block;width:20px;height:20px;margin-right:1
       <li><span class="num">1</span><div><p>Requires macOS 15 or later.</p></div></li>
       <li><span class="num">2</span><div><p>Download the installer from Releases and drag Palmhelm into Applications.</p></div></li>
       <li><span class="num">3</span><div><p>Open Palmhelm for the first time, then pair your iPhone with this Mac.</p></div></li>
-      <li><span class="num">4</span><div><p>Away from your network, connect to the same Mac over Tailscale. The iPhone app is coming to TestFlight.</p></div></li>
+      <li><span class="num">4</span><div><p>Away from your network, connect to the same Mac over Tailscale. The iPhone app is coming to the App Store.</p></div></li>
     </ol>
   </section>
-  <section class="two">
-    <div class="card why"><h2>Privacy</h2><p>Your data stays on your Mac. Session records, messages and approvals are stored in the local data directory.</p><p>The Bridge serves only on LAN or Tailscale addresses. Every request needs a device token; TLS is optional.</p><p>Palmhelm does not pass your data through any third-party server.</p></div>
-    <div><h2>Download</h2><p>Installers are published on GitHub Releases. Until Mac notarization is done, the download button here is not available.</p></div>
+  <section>
+    <div class="card why"><h2>Privacy</h2><p>Your data stays on your Mac. Session records, messages and approvals are stored in the local data directory.</p><p>Conversations and data travel directly between your devices, with no Palmhelm server in between. The optional Feishu channel goes through Feishu, iPhone push notifications go through Apple, and when Tailscale cannot connect directly it uses its encrypted relay.</p><p>The Bridge serves only on LAN or Tailscale addresses: TLS encrypted, and every request needs a device token.</p></div>
   </section>
   <footer>Copyright © forsakesoul · installers and release notes on <a href="https://github.com/forsakesoul/palmhelm/releases">GitHub Releases ↗</a></footer>
 </div>

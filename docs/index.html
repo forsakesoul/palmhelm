@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palmhelm — 在 iPhone 和 Mac 上指挥终端里的编码 agent</title>
+<meta name="description" content="Palmhelm 在 iPhone 和 Mac 上查看并指挥终端里的编码 agent（Claude Code、Codex 等，经 Herdr 窗格）。数据留在你的 Mac。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Permanent+Marker&family=Noto+Sans+SC:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap">
+<style>
+
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 var(--body)}
+a{color:var(--link)}
+.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .in{max-width:1080px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:18px}
+.brand{font-size:24px;color:var(--fg);text-decoration:none}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:10px}
+.top nav>a{color:var(--fg);text-decoration:none;font-size:15px;padding:6px 10px}
+.langs{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.langs button{font:600 13px var(--body);border:0;background:transparent;color:var(--sub);padding:6px 12px;cursor:pointer}
+.langs button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
+main{max-width:1080px;margin:0 auto;padding:40px 24px 80px}
+.hero{display:grid;grid-template-columns:1fr;gap:28px;padding:24px 0 8px}
+.crumb{font:600 13px var(--mono);text-transform:uppercase;letter-spacing:2px;margin:0}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.18;margin:6px 0 0}
+.lead{font-size:19px;color:var(--sub);max-width:760px;margin:0}
+.ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:999px;font-weight:700;text-decoration:none;color:var(--fg)}
+.video{display:block;width:100%;border-radius:var(--radius);background:#000;margin-top:8px}
+.note{color:var(--sub);font-size:14px;margin:10px 0 0}
+section{margin-top:72px}
+h2{font-size:clamp(26px,3.6vw,36px);margin:0 0 22px}
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:26px}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start}
+.num{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font:800 17px var(--mono);margin-top:2px}
+.steps p{margin:4px 0 12px}
+.term{border-radius:12px;overflow:hidden;background:var(--code);color:var(--codefg)}
+.term .bar{display:flex;align-items:center;gap:7px;padding:9px 12px;background:#ffffff0d}
+.term .bar i{width:11px;height:11px;border-radius:50%;display:inline-block}
+.term .bar i:nth-child(1){background:#ff5f57}.term .bar i:nth-child(2){background:#febc2e}.term .bar i:nth-child(3){background:#28c840}
+.term .bar span{font:12px var(--mono);opacity:.6;margin-left:6px}
+.term .bar button{margin-left:auto;font:12px var(--body);color:inherit;background:#ffffff14;border:1px solid #ffffff26;border-radius:6px;padding:2px 10px;cursor:pointer}
+.term pre{margin:0;padding:14px 18px 16px;overflow-x:auto;font:14px/1.65 var(--mono)}
+code{font-family:var(--mono);font-size:.9em}
+kbd{font:600 .85em var(--mono);border:1px solid #bdb6a3;border-bottom-width:3px;border-radius:6px;padding:1px 7px;background:#fff}
+.crew{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{border-radius:var(--radius);padding:22px}
+.card h3{margin:0 0 6px;font-size:19px}
+.card p{margin:0;color:var(--sub)}
+.tag{display:inline-block;font:600 12px var(--mono);border:1px solid currentColor;border-radius:999px;padding:0 8px;margin-left:6px;color:var(--accent);vertical-align:2px}
+.two{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:start}
+.two p{margin:0 0 14px}
+footer{margin-top:80px;padding-top:22px;border-top:1px solid var(--line);color:var(--sub);font-size:14px}
+[data-l]{display:none}[data-l].on{display:revert}
+@media (max-width:820px){.crew,.two{grid-template-columns:1fr}.top nav>a.hide-s{display:none}}
+
+:root{--bg:#f6eedb;--fg:#1d2a44;--sub:#5a5f6b;--line:#dccfae;--accent:#c8372d;--hi:#f2c230;--card:#fbf6e8;--link:#1f5ea8;--code:#16223b;--codefg:#ebe4d1;
+--display:"ZCOOL KuaiLe","Chalkboard SE",cursive;--logo:"Permanent Marker",cursive;--body:"Noto Sans SC",-apple-system,"PingFang SC",sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--radius:14px}
+body{background-image:radial-gradient(circle at 15% 8%,#fbf5e6 0,transparent 42%),radial-gradient(circle at 92% 75%,#eedfbd 0,transparent 46%)}
+.brand{font-family:var(--logo);letter-spacing:.5px}.brand b{color:var(--accent);font-weight:400}
+h1,h2{font-family:var(--display);font-weight:400}
+h2::before{content:"";display:inline-block;width:20px;height:20px;margin-right:12px;border:3px solid var(--accent);border-radius:50%;vertical-align:-1px;box-shadow:inset 0 0 0 3px var(--bg),inset 0 0 0 6px var(--accent)}
+.hi{background:linear-gradient(transparent 55%,var(--hi) 55%);padding:0 .1em}
+.crumb{color:var(--accent)}
+.btn.primary{background:var(--hi);border:2px solid var(--fg);color:var(--fg);box-shadow:3px 3px 0 var(--fg)}
+.btn{border:2px solid var(--fg)}
+.num{background:var(--accent);color:#fff8e7;border:3px double #fff8e7;box-shadow:0 0 0 2px var(--accent)}
+.card{border:2px dashed #cbb98d;background:var(--card)}
+.card.why{background:#fffaf0;border:2px solid var(--fg);position:relative;box-shadow:5px 5px 0 var(--hi);transform:rotate(-.6deg)}
+.card.why::after{content:"";position:absolute;right:20px;top:-11px;width:72px;height:22px;background:#c8372d55;transform:rotate(4deg)}
+.video{border:2px solid var(--fg);box-shadow:6px 6px 0 var(--hi)}
+.langs button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
+/* catalog cards */
+.cat{margin-top:64px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card .name{font:700 18px var(--mono);margin:0 0 8px;color:var(--fg)}
+.card .name a{color:inherit;text-decoration:none}
+.card .desc{margin:0 0 14px;color:var(--sub);font-size:15px}
+.card .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.chip{font:12px var(--mono);border:1px solid var(--line);border-radius:999px;padding:3px 12px;background:var(--bg);color:var(--fg);cursor:pointer}
+.chip:hover{border-color:var(--fg)}
+.card .src{font-size:13px}
+.count{font:600 13px var(--mono);color:var(--accent);margin-left:8px;vertical-align:4px}
+@media (max-width:820px){.cards{grid-template-columns:1fr}}
+
+.btn.dis{opacity:.55;cursor:not-allowed;box-shadow:none}
+.note{color:var(--sub);font-size:14px;margin:10px 0 0}
+.card h3{margin:0 0 8px}
+</style>
+</head>
+<body>
+<div class="top"><div class="in">
+  <a class="brand" href="#">Palm<b>helm</b></a>
+  <nav><a href="https://github.com/forsakesoul/palmhelm/releases">Releases ↗</a>
+    <span class="langs" role="group" aria-label="Language"><button type="button" data-set="en">EN</button><button type="button" data-set="zh">中</button></span>
+  </nav>
+</div></div>
+<main>
+<div data-l="zh">
+  <div class="hero">
+    <p class="crumb">macOS · iPhone · 数据留在本机</p>
+    <h1>在 iPhone 和 Mac 上，<br><span class="hi">指挥终端里的编码 agent</span>。</h1>
+    <p class="lead">Claude Code、Codex 等 agent 跑在 Herdr 窗格里。Palmhelm 把它们的会话同步到手机与 Mac，让你阅读对话、排队发消息、处理审批与提问。</p>
+    <div class="ctas"><span class="btn primary dis" aria-disabled="true">下载 Mac 版 · 即将推出</span><a class="btn" href="#features-zh">了解功能</a></div>
+    <p class="note">Mac 版等待 Apple 公证后发布，届时在 Releases 提供安装包。</p>
+  </div>
+  <section id="features-zh">
+    <h2>能做什么</h2>
+    <div class="crew">
+      <div class="card"><h3>会话同步与对话阅读</h3><p>在手机与 Mac 上查看 agent 的对话。只显示用户与助手的正文，工具输出与思考不出现在这里。</p></div>
+      <div class="card"><h3>消息排队与原因说明</h3><p>草稿、等待空闲、排位各有说明，知道消息为什么还没发出。</p></div>
+      <div class="card"><h3>立即插入</h3><p>agent 正在工作时，也能把一句话插进当前回合。</p></div>
+      <div class="card"><h3>审批与提问提醒</h3><p>审批和提问到达时提醒你，在手机上直接处理。</p></div>
+      <div class="card"><h3>局域网与 Tailscale 直连</h3><p>同一局域网或经 Tailscale 直连 Mac，不经第三方服务器。</p></div>
+      <div class="card"><h3>Mac 内置 Bridge</h3><p>菜单栏与刘海常驻，Bridge 由 App 启动与停止，不需要另外安装服务。</p></div>
+    </div>
+  </section>
+  <section id="install-zh">
+    <h2>下载与安装</h2>
+    <ol class="steps">
+      <li><span class="num">1</span><div><p>系统要求 macOS 15 或更高版本。</p></div></li>
+      <li><span class="num">2</span><div><p>在 Releases 下载安装包，把 Palmhelm 拖到“应用程序”。</p></div></li>
+      <li><span class="num">3</span><div><p>首次打开 Palmhelm，然后在 iPhone 上与这台 Mac 配对。</p></div></li>
+      <li><span class="num">4</span><div><p>离开局域网时，用 Tailscale 连接同一台 Mac。iPhone 版即将通过 TestFlight 提供。</p></div></li>
+    </ol>
+  </section>
+  <section class="two">
+    <div class="card why"><h2>隐私</h2><p>数据留在你的 Mac。会话记录、消息与审批都保存在本机数据目录。</p><p>Bridge 只在局域网或 Tailscale 地址上提供接口，读写都需要设备令牌，可选 TLS。</p><p>Palmhelm 不经过任何第三方服务器。</p></div>
+    <div><h2>下载</h2><p>安装包在 GitHub Releases 发布。Mac 版公证完成前，这里的下载按钮暂不可用。</p></div>
+  </section>
+  <footer>版权所有 © forsakesoul · 安装包与更新记录见 <a href="https://github.com/forsakesoul/palmhelm/releases">GitHub Releases ↗</a></footer>
+</div>
+<div data-l="en">
+  <div class="hero">
+    <p class="crumb">macOS · iPhone · data stays on your Mac</p>
+    <h1>Run the coding agents in your terminal, <br><span class="hi">from iPhone and Mac</span>.</h1>
+    <p class="lead">Claude Code, Codex and other agents run in Herdr panes. Palmhelm syncs their sessions to your phone and Mac, so you can read the conversation, queue messages, and handle approvals and questions.</p>
+    <div class="ctas"><span class="btn primary dis" aria-disabled="true">Download for Mac · coming soon</span><a class="btn" href="#features-en">What it does</a></div>
+    <p class="note">The Mac app will be published after Apple notarization, with the installer on Releases.</p>
+  </div>
+  <section id="features-en">
+    <h2>What it does</h2>
+    <div class="crew">
+      <div class="card"><h3>Session sync and reading</h3><p>Read the agent's conversation on your phone and Mac. Only the user and assistant text shows; tool output and reasoning do not.</p></div>
+      <div class="card"><h3>Queued messages with reasons</h3><p>Drafts, waiting for idle, and queue position each explain why a message has not gone out yet.</p></div>
+      <div class="card"><h3>Immediate insert</h3><p>Slip a line into the current turn even while the agent is working.</p></div>
+      <div class="card"><h3>Approval and question alerts</h3><p>Get alerted when an approval or question arrives, and answer it on your phone.</p></div>
+      <div class="card"><h3>LAN and Tailscale direct</h3><p>Connect straight to your Mac on the same network or over Tailscale. No third-party server in between.</p></div>
+      <div class="card"><h3>Built-in Bridge on Mac</h3><p>Lives in the menu bar and the notch. The app starts and stops the Bridge; no separate service to install.</p></div>
+    </div>
+  </section>
+  <section id="install-en">
+    <h2>Download and install</h2>
+    <ol class="steps">
+      <li><span class="num">1</span><div><p>Requires macOS 15 or later.</p></div></li>
+      <li><span class="num">2</span><div><p>Download the installer from Releases and drag Palmhelm into Applications.</p></div></li>
+      <li><span class="num">3</span><div><p>Open Palmhelm for the first time, then pair your iPhone with this Mac.</p></div></li>
+      <li><span class="num">4</span><div><p>Away from your network, connect to the same Mac over Tailscale. The iPhone app is coming to TestFlight.</p></div></li>
+    </ol>
+  </section>
+  <section class="two">
+    <div class="card why"><h2>Privacy</h2><p>Your data stays on your Mac. Session records, messages and approvals are stored in the local data directory.</p><p>The Bridge serves only on LAN or Tailscale addresses. Every request needs a device token; TLS is optional.</p><p>Palmhelm does not pass your data through any third-party server.</p></div>
+    <div><h2>Download</h2><p>Installers are published on GitHub Releases. Until Mac notarization is done, the download button here is not available.</p></div>
+  </section>
+  <footer>Copyright © forsakesoul · installers and release notes on <a href="https://github.com/forsakesoul/palmhelm/releases">GitHub Releases ↗</a></footer>
+</div>
+</main>
+<script>
+const langs = ["en", "zh"];
+let cur = "en";
+function pick(l, keep) {
+  if (!langs.includes(l)) l = "en";
+  cur = l;
+  document.documentElement.lang = l === "zh" ? "zh-CN" : "en";
+  document.querySelectorAll("[data-l]").forEach((e) => e.classList.toggle("on", e.dataset.l === l));
+  document.querySelectorAll(".langs button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.set === l)));
+  if (!keep) history.replaceState(null, "", "#" + l);
+}
+document.querySelectorAll(".langs button").forEach((b) => b.addEventListener("click", () => pick(b.dataset.set)));
+// A fragment is a language code (#zh) or ends with one (#install-zh): show that language and keep the fragment.
+function langOf(h) { const m = h.match(/(?:^|-)([a-z]{2})$/); return m && langs.includes(m[1]) ? m[1] : null; }
+addEventListener("hashchange", () => { const h = location.hash.slice(1), l = langOf(h); if (l) pick(l, h !== l); });
+const h = location.hash.slice(1), hl = langOf(h);
+pick(hl || (navigator.language || "en").slice(0, 2).toLowerCase(), !!hl && h !== hl);
+</script>
+</body>
+</html>

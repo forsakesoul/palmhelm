@@ -109,6 +109,7 @@ h1{text-wrap:balance}
     <p class="note"><strong>需要先安装 <a href="https://herdr.dev">Herdr</a>。</strong>Herdr 是终端里的 agent 多路复用器，agent 要在 Herdr 窗格中运行。</p>
     <div class="ctas"><a class="btn primary" href="https://github.com/forsakesoul/palmhelm/releases/latest/download/Palmhelm.dmg">下载 Mac 版（macOS 15+）</a><a class="btn" href="#features-zh">了解功能</a></div>
     <p class="note">已通过 Apple 公证 · <a href="https://github.com/forsakesoul/palmhelm/releases">查看全部版本与校验值 ↗</a></p>
+    <video class="video" controls playsinline preload="none" poster="media/palmhelm-a-zh.jpg" src="media/palmhelm-a-zh.mp4" aria-label="Palmhelm 演示视频"></video>
   </div>
   <section id="features-zh">
     <h2>能做什么</h2>
@@ -146,6 +147,7 @@ h1{text-wrap:balance}
     <p class="note"><strong>Requires <a href="https://herdr.dev">Herdr</a> first.</strong> Herdr is a terminal multiplexer for coding agents; the agents must run in Herdr panes.</p>
     <div class="ctas"><a class="btn primary" href="https://github.com/forsakesoul/palmhelm/releases/latest/download/Palmhelm.dmg">Download for Mac (macOS 15+)</a><a class="btn" href="#features-en">What it does</a></div>
     <p class="note">Notarized by Apple · <a href="https://github.com/forsakesoul/palmhelm/releases">All releases and checksums ↗</a></p>
+    <video class="video" controls playsinline preload="none" poster="media/palmhelm-a-en.jpg" src="media/palmhelm-a-en.mp4" aria-label="Palmhelm demo video"></video>
   </div>
   <section id="features-en">
     <h2>What it does</h2>
@@ -184,6 +186,7 @@ function pick(l, keep) {
   cur = l;
   document.documentElement.lang = l === "zh" ? "zh-CN" : "en";
   document.querySelectorAll("[data-l]").forEach((e) => e.classList.toggle("on", e.dataset.l === l));
+  document.querySelectorAll("[data-l]:not(.on) video").forEach((v) => v.pause());
   document.querySelectorAll(".langs button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.set === l)));
   if (!keep) history.replaceState(null, "", "#" + l);
 }

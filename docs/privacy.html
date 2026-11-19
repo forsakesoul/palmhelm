@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palmhelm — Privacy Policy</title>
+<style>
+body{margin:0;background:#f6eedb;color:#1d2a44;font:17px/1.75 -apple-system,"PingFang SC","Noto Sans SC",sans-serif}
+main{max-width:760px;margin:0 auto;padding:40px 24px 80px}
+h1{font-size:34px;margin:0 0 4px}h2{font-size:22px;margin:36px 0 8px}
+.sub{color:#5a5f6b;font-size:14px;margin:0 0 28px}
+a{color:#1f5ea8}hr{border:0;border-top:1px solid #dccfae;margin:56px 0}
+</style>
+</head>
+<body><main>
+<p><a href="./">← Palmhelm</a> · <a href="#zh">中文</a></p>
+
+<h1>Privacy Policy</h1>
+<p class="sub">Palmhelm for iPhone and Mac · Last updated November 18, 2026</p>
+
+<p><strong>Short version: Palmhelm does not collect your data.</strong> There is no Palmhelm account, no Palmhelm cloud server, no analytics, no advertising and no tracking. The iPhone app talks only to the Palmhelm Bridge running on your own Mac.</p>
+
+<h2>Where your data goes</h2>
+<p>The iPhone app connects directly to the Bridge address you pair with (your local network, or your own Tailscale network). Agent sessions, messages, approvals and usage figures are read from and sent to that Mac only. The connection is encrypted with TLS and the Mac's certificate fingerprint is pinned at pairing. We, the developer, have no server that receives this data and cannot see it.</p>
+
+<h2>What is stored on your iPhone</h2>
+<p>The paired Bridge address, a device credential for that Bridge, and your app preferences. The credential is kept in the iOS Keychain. Deleting the app or unpairing removes them.</p>
+
+<h2>Permissions</h2>
+<ul>
+<li><strong>Camera</strong> — only to scan the pairing QR code shown on your Mac. Images are not saved or uploaded.</li>
+<li><strong>Local Network</strong> — to find and connect to the Bridge on your Mac.</li>
+<li><strong>Microphone and Speech Recognition</strong> — only when you tap record. Speech is transcribed on your iPhone into a draft; the recording is not saved or uploaded, and nothing is sent until you confirm.</li>
+<li><strong>Notifications</strong> — if you allow them, your iPhone's push token is sent to your own Bridge so it can notify you. Notifications are delivered through Apple Push Notification service.</li>
+</ul>
+
+<h2>Third parties</h2>
+<p>Palmhelm contains no third-party analytics, crash reporting or advertising SDKs. The coding agents you run on your Mac (for example Claude Code or Codex) are separate products with their own privacy policies; Palmhelm only shows and relays what happens in your terminal.</p>
+
+<h2>Children</h2>
+<p>Palmhelm is a developer tool and is not directed at children.</p>
+
+<h2>Changes and contact</h2>
+<p>If this policy changes, the new version will be posted on this page with a new date. Questions: open an issue at <a href="https://github.com/forsakesoul/palmhelm/issues">github.com/forsakesoul/palmhelm/issues</a>.</p>
+
+<hr id="zh">
+
+<h1>隐私政策</h1>
+<p class="sub">Palmhelm iPhone 与 Mac 版 · 更新于 2026 年 11 月 18 日</p>
+
+<p><strong>简单说：Palmhelm 不收集你的数据。</strong>没有 Palmhelm 账号、没有 Palmhelm 云服务器，不做统计、广告或追踪。iPhone App 只和你自己 Mac 上运行的 Palmhelm Bridge 通信。</p>
+
+<h2>数据去哪里</h2>
+<p>iPhone App 直接连接你配对的 Bridge 地址（局域网或你自己的 Tailscale 网络）。agent 会话、消息、审批与用量只在你的 iPhone 和这台 Mac 之间传输，连接使用 TLS 加密，并在配对时固定 Mac 证书指纹。开发者没有接收这些数据的服务器，也看不到它们。</p>
+
+<h2>iPhone 上存了什么</h2>
+<p>配对的 Bridge 地址、该 Bridge 的设备凭据和 App 偏好设置。凭据存放在 iOS 钥匙串。删除 App 或取消配对即清除。</p>
+
+<h2>权限</h2>
+<ul>
+<li><strong>相机</strong>：只用于扫描 Mac 上的配对二维码，图像不保存、不上传。</li>
+<li><strong>本地网络</strong>：发现并连接你 Mac 上的 Bridge。</li>
+<li><strong>麦克风与语音识别</strong>：只在你点录音时使用，由 iPhone 本机转写成草稿；录音不保存、不上传，你确认后才发送。</li>
+<li><strong>通知</strong>：如果你允许，iPhone 的推送令牌会发给你自己的 Bridge 用于提醒；通知经 Apple 推送服务送达。</li>
+</ul>
+
+<h2>第三方</h2>
+<p>Palmhelm 不包含第三方统计、崩溃上报或广告 SDK。你在 Mac 上运行的编程 agent（如 Claude Code、Codex）是独立产品，适用各自的隐私政策；Palmhelm 只显示并转达终端里发生的事。</p>
+
+<h2>儿童</h2>
+<p>Palmhelm 是开发者工具，不面向儿童。</p>
+
+<h2>变更与联系</h2>
+<p>政策如有变化，会在本页发布新版本并更新日期。问题请在 <a href="https://github.com/forsakesoul/palmhelm/issues">github.com/forsakesoul/palmhelm/issues</a> 提 issue。</p>
+</main></body>
+</html>

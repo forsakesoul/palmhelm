@@ -4,6 +4,18 @@ Public releases of Palmhelm for Mac. Installers are on [Releases](https://github
 
 [中文版](CHANGELOG.zh-CN.md)
 
+## 1.0 (155) · 2026-11-19
+
+Built-in Palmhelm Bridge 0.3.14 (previously 0.3.13).
+
+### Improved
+- The conversation header is tidier: the title and the Chat / Terminal switch share the top line and stay visible while you scroll; status, model, Details and Show in Herdr sit on the line below and collapse as you scroll. In narrow windows, Show in Herdr shrinks to an icon and long titles are shortened in the middle.
+- Teams with more than one Worker or Advisor (such as `_execute2` or `_advisor2`) now appear in their team group with the right role, instead of under "Ungrouped".
+- "What's new" in the update banner opens the changelog in the app's language.
+
+### Fixed
+- Two messages on the About page ("Not running" for the built-in Bridge and "Time unknown") stayed in Chinese in the English interface.
+
 ## 1.0 (153) · 2026-11-19
 
 Built-in Palmhelm Bridge 0.3.13 (previously 0.3.12).

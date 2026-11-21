@@ -4,6 +4,13 @@ Palmhelm for Mac 的公开版本。安装包见 [Releases](https://github.com/fo
 
 [English](CHANGELOG.md)
 
+## 1.0 (156) · 2026-11-21
+
+内置 Palmhelm Bridge 0.3.15（上一版为 0.3.14）。
+
+### 改进
+- 第一次打开很长的回复时，读取速度约快一倍。
+
 ## 1.0 (155) · 2026-11-19
 
 内置 Palmhelm Bridge 0.3.14（上一版为 0.3.13）。

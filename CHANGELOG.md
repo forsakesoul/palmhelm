@@ -4,6 +4,13 @@ Public releases of Palmhelm for Mac. Installers are on [Releases](https://github
 
 [中文版](CHANGELOG.zh-CN.md)
 
+## 1.0 (156) · 2026-11-21
+
+Built-in Palmhelm Bridge 0.3.15 (previously 0.3.14).
+
+### Improved
+- Opening a very long reply for the first time is about twice as fast.
+
 ## 1.0 (155) · 2026-11-19
 
 Built-in Palmhelm Bridge 0.3.14 (previously 0.3.13).

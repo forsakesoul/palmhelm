@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coding agent handoff — Palmhelm</title>
+<style>
+body{margin:0;background:#f6eedb;color:#1d2a44;font:17px/1.75 -apple-system,"PingFang SC","Noto Sans SC",sans-serif}
+main{max-width:760px;margin:0 auto;padding:40px 24px 80px}
+h1{font-size:34px;margin:0 0 4px}h2{font-size:22px;margin:36px 0 8px}
+a{color:#1f5ea8}hr{border:0;border-top:1px solid #dccfae;margin:56px 0}
+.foot{color:#5a5f6b;font-size:14px;margin-top:48px}
+</style>
+</head>
+<body><main>
+<p><a href="./">← Palmhelm</a></p>
+
+<h1>Coding agent handoff</h1>
+
+<p>A free, MIT-licensed agent skill. Before you leave your computer or switch sessions, have your coding agent write a handoff that separates what it actually verified from what it did not. It depends on no other tool.</p>
+
+<h2>What the handoff contains</h2>
+<ul>
+<li><strong>Changes</strong>: what the agent changed, and where.</li>
+<li><strong>Verified</strong>: the checks it ran, with their results.</li>
+<li><strong>Blocked or unverified</strong>: what it could not check, and why.</li>
+<li><strong>Next steps</strong>: what to do first when you pick the work up again.</li>
+</ul>
+<p>Read the <a href="https://github.com/forsakesoul/palmhelm/blob/main/skills/coding-agent-handoff/SKILL.md">skill on GitHub</a> and an <a href="https://github.com/forsakesoul/palmhelm/blob/main/skills/coding-agent-handoff/examples/handoff-example.md">example handoff</a>.</p>
+
+<h2>Install</h2>
+<p>Claude Code: copy the <code>skills/coding-agent-handoff</code> folder to <code>~/.claude/skills/</code>.<br>
+Codex: copy the same folder to <code>~/.codex/skills/</code>.</p>
+<p>Then tell the agent you are stepping away, or ask it to write a handoff.</p>
+
+<h2>Continue from your phone</h2>
+<p>Palmhelm syncs the agent sessions running in your Herdr panes to your iPhone and Mac, so a handoff written on your computer can be read on your phone, and you can keep messaging the agent from there. Palmhelm only supports agents running in Herdr panes, and it needs Palmhelm for Mac (Apple silicon, macOS 15 or later). <a href="./">Palmhelm home page</a></p>
+
+<p class="foot">The skill files under skills/coding-agent-handoff are <a href="https://github.com/forsakesoul/palmhelm/blob/main/skills/coding-agent-handoff/LICENSE">MIT-licensed</a>; this page is not.</p>
+</main></body>
+</html>

@@ -31,7 +31,13 @@ Claude Code, Codex and other agents run in [Herdr](https://herdr.dev) panes. Pal
 - iPhone: [Palmhelm on the US App Store](https://apps.apple.com/us/app/palmhelm/id6833474015) (free; not yet on the China mainland App Store)
 - Download page: <https://forsakesoul.github.io/palmhelm/> (source in [`docs/`](docs/index.html))
 
-This repository holds only the download page and release notes. The installers are on GitHub Releases.
+This repository holds the download page, release notes, the privacy policy, and the MIT-licensed coding agent handoff skill in `skills/coding-agent-handoff`. The installers are on GitHub Releases.
+
+### Skills
+
+Coding agent handoff: a free, MIT-licensed skill that has your agent write a handoff before you leave, separating what was verified from what was not. Source: [`skills/coding-agent-handoff/`](skills/coding-agent-handoff/). Page: <https://forsakesoul.github.io/palmhelm/handoff.html>
+
+Only the files under skills/coding-agent-handoff are open source, under the MIT license in that folder. Everything else in this repository is not covered by it.
 
 ### Privacy
 

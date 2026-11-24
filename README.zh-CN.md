@@ -31,7 +31,13 @@ Claude Code、Codex 等 agent 跑在 [Herdr](https://herdr.dev) 窗格里。Palm
 - iPhone 版：[美区 App Store 上的 Palmhelm](https://apps.apple.com/us/app/palmhelm/id6833474015)（免费；国区暂未上架）
 - 下载页：<https://forsakesoul.github.io/palmhelm/>（源码在 [`docs/`](docs/index.html)）
 
-本仓库只放下载页与发行包的说明，安装包发布在 GitHub Releases。
+本仓库放下载页、发行包说明、隐私政策，以及 MIT 许可的编码 agent 交接 skill（`skills/coding-agent-handoff`）。安装包发布在 GitHub Releases。
+
+### 技能
+
+编码 agent 交接 skill：免费、MIT 许可，让 agent 在你离开前写一份交接，区分已验证与未验证的内容。源码：[`skills/coding-agent-handoff/`](skills/coding-agent-handoff/)。文档页：<https://forsakesoul.github.io/palmhelm/handoff.html>
+
+仅 skills/coding-agent-handoff 目录下的文件以该目录中的 MIT 许可开源，本仓库其余内容不适用。
 
 ### 隐私
 

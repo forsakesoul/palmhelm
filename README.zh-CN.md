@@ -28,6 +28,7 @@ Claude Code、Codex 等 agent 跑在 [Herdr](https://herdr.dev) 窗格里。Palm
 
 - Mac 版：[Palmhelm.dmg（最新版）](https://github.com/forsakesoul/palmhelm/releases/latest/download/Palmhelm.dmg)，已通过 Apple 公证。
 - 全部版本与校验值：[GitHub Releases](https://github.com/forsakesoul/palmhelm/releases)
+- 命令行用户：Palmhelm Bridge 也可以不装 Mac App 单独运行（Apple 芯片与 Intel），见 [bridge-0.3.16](https://github.com/forsakesoul/palmhelm/releases/tag/bridge-0.3.16)。推荐仍是 Mac App。
 - iPhone 版：[美区 App Store 上的 Palmhelm](https://apps.apple.com/us/app/palmhelm/id6833474015)（免费；国区暂未上架）
 - 下载页：<https://forsakesoul.github.io/palmhelm/>（源码在 [`docs/`](docs/index.html)）
 

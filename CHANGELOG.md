@@ -4,6 +4,17 @@ Public releases of Palmhelm for Mac. Installers are on [Releases](https://github
 
 [中文版](CHANGELOG.zh-CN.md)
 
+## 1.0 (157) · 2026-11-24
+
+Built-in Palmhelm Bridge 0.3.16 (previously 0.3.15).
+
+### New
+- Palmhelm Bridge is now also available on its own for command-line users: see [bridge-0.3.16](https://github.com/forsakesoul/palmhelm/releases/tag/bridge-0.3.16). The Mac app remains the recommended way.
+
+### Fixed
+- Updated the WebSocket library used by the optional Feishu channel to fix a security issue (GO-2026-6278).
+- The third-party notices inside the app now cover every component in Bridge 0.3.16.
+
 ## 1.0 (156) · 2026-11-21
 
 Built-in Palmhelm Bridge 0.3.15 (previously 0.3.14).

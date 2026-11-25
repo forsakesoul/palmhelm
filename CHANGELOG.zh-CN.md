@@ -4,6 +4,17 @@ Palmhelm for Mac 的公开版本。安装包见 [Releases](https://github.com/fo
 
 [English](CHANGELOG.md)
 
+## 1.0 (157) · 2026-11-24
+
+内置 Palmhelm Bridge 0.3.16（上一版为 0.3.15）。
+
+### 新增
+- Palmhelm Bridge 现在也可以单独提供给命令行用户使用：见 [bridge-0.3.16](https://github.com/forsakesoul/palmhelm/releases/tag/bridge-0.3.16)。推荐仍是 Mac App。
+
+### 修复
+- 更新可选飞书通道使用的 WebSocket 库，修复一个安全问题（GO-2026-6278）。
+- App 内的第三方许可声明已覆盖 Bridge 0.3.16 的全部组件。
+
 ## 1.0 (156) · 2026-11-21
 
 内置 Palmhelm Bridge 0.3.15（上一版为 0.3.14）。

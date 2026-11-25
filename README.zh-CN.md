@@ -16,7 +16,7 @@ Claude Code、Codex 等 agent 跑在 [Herdr](https://herdr.dev) 窗格里。Palm
 - **消息排队与原因说明**：草稿、等待空闲、排位各有说明，知道消息为什么还没发出。
 - **立即插入**：agent 正在工作时，也能把一句话插进当前回合。
 - **审批与提问**：在手机上处理 agent 的审批与提问。
-- **局域网与 Tailscale 直连**：同一局域网或经 Tailscale 直连 Mac。
+- **局域网与 Tailscale 直连**：同一局域网或经 Tailscale 直连 Mac。Tailscale 需要中继、官方中继又离得远时，可以[自建 DERP 中继](docs/private-derp.zh-CN.md)。
 - **Mac 内置 Bridge**：菜单栏与刘海常驻，Bridge 由 App 启动与停止。
 
 ### 系统要求

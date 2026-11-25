@@ -16,7 +16,7 @@ Claude Code, Codex and other agents run in [Herdr](https://herdr.dev) panes. Pal
 - **Queued messages with reasons**: drafts, waiting for idle, and queue position each explain why a message has not gone out yet.
 - **Immediate insert**: slip a line into the current turn even while the agent is working.
 - **Approvals and questions**: handle approvals and questions from your agents on your phone.
-- **LAN and Tailscale direct**: connect straight to your Mac on the same network or over Tailscale.
+- **LAN and Tailscale direct**: connect straight to your Mac on the same network or over Tailscale. If Tailscale has to relay and its relays are far away, you can [run your own DERP relay](docs/private-derp.md).
 - **Built-in Bridge on Mac**: lives in the menu bar and the notch; the app starts and stops the Bridge.
 
 ### Requirements

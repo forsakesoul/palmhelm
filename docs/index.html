@@ -149,7 +149,7 @@ h1{text-wrap:balance}
     <h3 class="sub">更新</h3>
     <p>已安装的用户下载新的 Palmhelm.dmg，拖入“应用程序”覆盖即可。数据保存在 Mac 的数据目录里，位于 App 之外，替换 App 不影响这些数据。</p>
     <h3 class="sub">命令行用户：只用 Bridge</h3>
-    <p>推荐安装 Palmhelm for Mac。习惯命令行、不想装 Mac App 时，也可以单独运行 Palmhelm Bridge：从 <a href="https://github.com/forsakesoul/palmhelm/releases/tag/bridge-0.3.16">bridge-0.3.16</a> 下载对应芯片的二进制（Apple 芯片或 Intel，macOS 13 或更高版本），运行 <code>palmhelm-bridge up</code> 启动，再运行 <code>palmhelm-bridge pair --qr</code> 用 iPhone 扫码配对。完整步骤见该版本的发行说明。</p>
+    <p>推荐安装 Palmhelm for Mac。习惯命令行、不想装 Mac App 时，也可以单独运行 Palmhelm Bridge：从 <a href="https://github.com/forsakesoul/palmhelm/releases/tag/bridge-0.3.17">bridge-0.3.17</a> 下载对应芯片的二进制（Apple 芯片或 Intel，macOS 13 或更高版本），运行 <code>palmhelm-bridge up</code> 启动，再运行 <code>palmhelm-bridge pair --qr</code> 用 iPhone 扫码配对。完整步骤见该版本的发行说明。</p>
   </section>
   <section>
     <div class="card why"><h2>隐私</h2><p>数据留在你的 Mac。会话记录、消息与审批都保存在本机数据目录。</p><p>对话与数据在你的设备之间直接传输，没有 Palmhelm 自己的服务器。可选的飞书通道经飞书传输，iPhone 推送经 Apple 送达；Tailscale 无法直连时，会经其加密中继。</p><p>Bridge 只在局域网或 Tailscale 地址上提供接口：TLS 加密，并需要设备令牌。</p></div>
@@ -189,7 +189,7 @@ h1{text-wrap:balance}
     <h3 class="sub">Updates</h3>
     <p>To update, download the new Palmhelm.dmg and drag it into Applications to replace the app. Your data is stored in the Mac's data directory, outside the app, and replacing the app does not affect it.</p>
     <h3 class="sub">Command-line users: Bridge only</h3>
-    <p>Palmhelm for Mac is the recommended way. If you prefer the command line and would rather not install the Mac app, you can run Palmhelm Bridge on its own: download the binary for your Mac (Apple silicon or Intel, macOS 13 or later) from <a href="https://github.com/forsakesoul/palmhelm/releases/tag/bridge-0.3.16">bridge-0.3.16</a>, start it with <code>palmhelm-bridge up</code>, then run <code>palmhelm-bridge pair --qr</code> and scan the code with your iPhone. The release notes have the full steps.</p>
+    <p>Palmhelm for Mac is the recommended way. If you prefer the command line and would rather not install the Mac app, you can run Palmhelm Bridge on its own: download the binary for your Mac (Apple silicon or Intel, macOS 13 or later) from <a href="https://github.com/forsakesoul/palmhelm/releases/tag/bridge-0.3.17">bridge-0.3.17</a>, start it with <code>palmhelm-bridge up</code>, then run <code>palmhelm-bridge pair --qr</code> and scan the code with your iPhone. The release notes have the full steps.</p>
   </section>
   <section>
     <div class="card why"><h2>Privacy</h2><p>Your data stays on your Mac. Session records, messages and approvals are stored in the local data directory.</p><p>Conversations and data travel directly between your devices, with no Palmhelm server in between. The optional Feishu channel goes through Feishu, iPhone push notifications go through Apple, and when Tailscale cannot connect directly it uses its encrypted relay.</p><p>The Bridge serves only on LAN or Tailscale addresses: TLS encrypted, and every request needs a device token.</p></div>

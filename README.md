@@ -28,7 +28,7 @@ Claude Code, Codex and other agents run in [Herdr](https://herdr.dev) panes. Pal
 
 - Mac: [Palmhelm.dmg (latest)](https://github.com/forsakesoul/palmhelm/releases/latest/download/Palmhelm.dmg). Notarized by Apple.
 - All releases and checksums: [GitHub Releases](https://github.com/forsakesoul/palmhelm/releases)
-- Command-line users: Palmhelm Bridge also runs on its own, without the Mac app (Apple silicon and Intel). See [bridge-0.3.16](https://github.com/forsakesoul/palmhelm/releases/tag/bridge-0.3.16). The Mac app remains the recommended way.
+- Command-line users: Palmhelm Bridge also runs on its own, without the Mac app (Apple silicon and Intel). See [bridge-0.3.17](https://github.com/forsakesoul/palmhelm/releases/tag/bridge-0.3.17). The Mac app remains the recommended way.
 - iPhone: [Palmhelm on the US App Store](https://apps.apple.com/us/app/palmhelm/id6833474015) (free; not yet on the China mainland App Store)
 - Download page: <https://forsakesoul.github.io/palmhelm/> (source in [`docs/`](docs/index.html))
 

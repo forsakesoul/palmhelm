@@ -4,6 +4,26 @@ Public releases of Palmhelm for Mac. Installers are on [Releases](https://github
 
 [中文版](CHANGELOG.zh-CN.md)
 
+## 1.0 (158) · 2026-11-28
+
+Built-in Palmhelm Bridge 0.3.17 (previously 0.3.16).
+
+### New
+- Remote mode: Palmhelm on one Mac can connect to the Bridge on another Mac and see the same conversations, send messages and handle approvals, without running a Bridge itself.
+- Rename a conversation from the Mac.
+- Markdown tables in conversations render as tables, with horizontal scrolling, column alignment and wrapped long cells.
+- Account quota shows Antigravity (agy) and Qoder usage limits, including Qoder add-on credits and a note when a Qoder plan has no plan credits; agy conversations are counted in Usage.
+
+### Improved
+- The notch island stays above other notch apps by default (you can turn this off in Settings); the system menus still stay on top.
+- agy panes keep their name when agy switches conversations, so agy sessions stay visible and reachable; their messages and titles show only what you typed.
+- Conversation pages show paths and links as written, and a Claude `!` command and its output appear as "Terminal command / Terminal output".
+
+### Fixed
+- After pairing with its own Bridge, this Mac is now set to control and older "this Mac" device records are cleaned up.
+- If you installed GitHub CLI with Homebrew's default layout, Settings no longer says GitHub CLI is unavailable.
+- The installer no longer contains source paths from the build machine.
+
 ## 1.0 (157) · 2026-11-24
 
 Built-in Palmhelm Bridge 0.3.16 (previously 0.3.15).
